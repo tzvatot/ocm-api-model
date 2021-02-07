@@ -22,6 +22,8 @@ class ResourceQuota {
 	BYOC Boolean
 	AvailabilityZoneType String
 	Allowed Integer
-	Reserved Integer
+	SkuCount Integer
 	Type String
+	CreatedAt Date
+    UpdatedAt Date
 }

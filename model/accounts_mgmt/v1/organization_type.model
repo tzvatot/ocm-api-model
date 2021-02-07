@@ -17,4 +17,8 @@ limitations under the License.
 class Organization {
 	Name string
 	ExternalID string
+	EbsAccountID string
+	CreatedAt Date
+	UpdatedAt Date
+	Labels []Label
 }

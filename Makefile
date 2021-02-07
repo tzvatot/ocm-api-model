@@ -15,21 +15,37 @@
 #
 
 # Details of the metamodel used to check the model:
-metamodel_version:=v0.0.17
+metamodel_version:=v0.0.34
 metamodel_url:=https://github.com/openshift-online/ocm-api-metamodel.git
 
 .PHONY: check
 check: metamodel
-	metamodel/ocm-metamodel-tool check --model=model
+	metamodel/metamodel check --model=model
+
+.PHONY: openapi
+openapi: metamodel
+	metamodel/metamodel generate openapi --model=model --output=openapi
 
 .PHONY: metamodel
 metamodel:
 	rm -rf "$@"
-	git clone "$(metamodel_url)" "$@"
-	cd "$@" && git fetch --tags origin
-	cd "$@" && git checkout -B build "$(metamodel_version)"
+	if [ -d "$(metamodel_url)" ]; then \
+		cp -r "$(metamodel_url)" "$@"; \
+	else \
+		git clone "$(metamodel_url)" "$@"; \
+		cd "$@"; \
+		git fetch --tags origin; \
+		git checkout -B build "$(metamodel_version)"; \
+	fi
 	make -C "$@"
+
+# Enforce indentation by tabs. License contains 2 spaces, so reject 3+.
+lint:
+	find -name '*.model' -print0 | xargs -0 sh -c '! egrep --with-filename --line-number "^(   |\t+ )" "$$@"'
 
 .PHONY: clean
 clean:
-	rm -rf metamodel
+	rm -rf \
+		metamodel \
+		openapi \
+		$(NULL)

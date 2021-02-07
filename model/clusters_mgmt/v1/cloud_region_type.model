@@ -18,7 +18,7 @@ limitations under the License.
 class CloudRegion {
 	// Human friendly identifier of the region, for example `us-east-1`.
 	//
-	// NOTE: Currently for all cloud provideers and all regions `id` and `name` have exactly
+	// NOTE: Currently for all cloud providers and all regions `id` and `name` have exactly
 	// the same values.
 	Name String
 
@@ -27,4 +27,10 @@ class CloudRegion {
 
 	// Link to the cloud provider that the region belongs to.
 	link CloudProvider CloudProvider
+
+	// Whether the region is enabled for deploying an OSD cluster.
+	Enabled Boolean
+
+	// Whether the region supports multiple availability zones.
+	SupportsMultiAZ Boolean
 }

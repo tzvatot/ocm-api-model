@@ -18,4 +18,6 @@ limitations under the License.
 struct ClusterAPI {
 	// The URL of the API server of the cluster.
 	URL String
+	// The listening method of the API server.
+	Listening ListeningMethod
 }

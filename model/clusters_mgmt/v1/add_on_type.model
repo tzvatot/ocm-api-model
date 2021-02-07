@@ -22,6 +22,9 @@ class AddOn {
 	// Description of the add-on.
 	Description String
 
+	// Link to documentation about the add-on.
+	DocsLink String
+
 	// Label used to attach to a cluster deployment when add-on is installed.
 	Label String
 
@@ -31,9 +34,30 @@ class AddOn {
 	// Indicates if this add-on can be added to clusters.
 	Enabled Boolean
 
+	// Indicates if this add-on is hidden.
+	Hidden Boolean
+
 	// Used to determine from where to reserve quota for this add-on.
 	ResourceName String
 
 	// Used to determine how many units of quota an add-on consumes per resource name.
 	ResourceCost Float
+
+	// The namespace in which the addon CRD exists.
+	TargetNamespace String
+
+	// The mode in which the addon is deployed.
+	InstallMode AddOnInstallMode
+
+	// The name of the operator installed by this add-on.
+	OperatorName String
+
+	// Indicates if this add-on has external resources associated with it
+	HasExternalResources Boolean
+
+	// List of parameters for this add-on.
+	link Parameters []AddOnParameter
+
+	// List of requirements for this add-on.
+	Requirements []AddOnRequirement
 }

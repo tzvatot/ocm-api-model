@@ -16,12 +16,18 @@ limitations under the License.
 
 // Manages a specific subscription.
 resource Subscription {
-	// Retrieves the details of the subscription.
+	// Retrieves the details of the subscription by ID.
 	method Get {
 		out Body Subscription
 	}
 
-	// Deletes the subscription.
+	// Update a subscription
+	method Update {
+		// Updated subscription data
+		in out Body Subscription
+	}
+
+	// Deletes the subscription by ID.
 	method Delete {
 	}
 
@@ -29,5 +35,15 @@ resource Subscription {
 	// subscription.
 	locator ReservedResources {
 		target SubscriptionReservedResources
+	}
+
+	// Reference to the list of labels of a specific subscription.
+	locator Labels {
+		target GenericLabels
+	}
+
+	// Notify a user related to the subscription via email
+	locator Notify {
+		target SubscriptionNotify
 	}
 }

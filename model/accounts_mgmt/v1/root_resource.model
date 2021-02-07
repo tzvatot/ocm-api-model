@@ -70,6 +70,11 @@ resource Root {
 		target ClusterRegistrations
 	}
 
+	// Reference to the resource that manages feature toggles.
+	locator FeatureToggles {
+		target FeatureToggles
+	}
+
 	// Reference to the resource that manages the collection of roles.
 	locator Roles {
 		target Roles
@@ -97,5 +102,36 @@ resource Root {
 	// SKUS
 	locator SKUS {
 		target SKUS
+	}
+
+	// Reference to the resource that manages the collection of
+	// Sku Rules
+	locator SkuRules {
+		target SkuRules
+	}
+
+	// Reference to the resource that manages generates access tokens.
+	locator PullSecrets {
+		target PullSecrets
+	}
+
+	// Reference to the resource that manages the collection of labels.
+	locator Labels {
+		target Labels
+	}
+
+	// Reference to the resource that manages the notifications.
+	locator Notify {
+		target Notify
+	}
+
+	// Reference to the resource that manages token authorization.
+	locator TokenAuthorization {
+		target TokenAuthorization
+	}
+
+	// Reference to the resource that manages the support cases.
+	locator SupportCases {
+		target SupportCases
 	}
 }

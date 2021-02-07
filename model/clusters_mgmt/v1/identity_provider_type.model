@@ -45,6 +45,9 @@ class IdentityProvider {
 	// Details for `google` identity providers.
 	Google GoogleIdentityProvider
 
+	// Details for `htpasswd` identity providers.
+	Htpasswd HTPasswdIdentityProvider
+
 	// Details for `ldap` identity providers.
 	LDAP LDAPIdentityProvider
 
@@ -57,6 +60,7 @@ enum IdentityProviderType {
 	Github
 	Gitlab
 	Google
+	Htpasswd
 	LDAP
 	OpenID
 }
@@ -77,6 +81,9 @@ struct GithubIdentityProvider {
 	// Client identifier of a registered _GitHub_ OAuth application.
 	ClientID String
 
+	// Client secret of a registered _GitHub_ OAuth application.
+	ClientSecret String
+
 	// For _GitHub Enterprise_ you must provide the host name of your instance, such as
 	// `example.com`. This value must match the _GitHub Enterprise_ host name value in the
 	// `/setup/settings` file and cannot include a port number.
@@ -84,7 +91,10 @@ struct GithubIdentityProvider {
 	// For plain _GitHub_ omit this parameter.
 	Hostname String
 
-	// Optional list of temas. Cannot be used in combination with the organizations field.
+	// Optional list of organizations. Cannot be used in combination with the Teams field.
+	Organizations []String
+
+	// Optional list of teams. Cannot be used in combination with the Organizations field.
 	Teams []String
 }
 
@@ -108,17 +118,26 @@ struct GoogleIdentityProvider {
 	// Client identifier of a registered _Google_ project.
 	ClientID String
 
-	// Client secret issued by _Google.
+	// Client secret issued by _Google_.
 	ClientSecret String
 
 	// Optional hosted domain to restrict sign-in accounts to.
 	HostedDomain string
 }
 
+// Details for `htpasswd` identity providers.
+struct HTPasswdIdentityProvider {
+	// Username to be used in the _HTPasswd_ data file.
+	Username String
+
+	// Password to be used in the _HTPasswd_ data file.
+	Password String
+}
+
 // Details for `ldap` identity providers.
 struct LDAPIdentityProvider {
 	// LDAP attributes used to configure the provider.
-	LDAPAttributes LDAPAttributes
+	Attributes LDAPAttributes
 
 	// Optional distinguished name to use to bind during the search phase.
 	BindDN String
@@ -174,8 +193,8 @@ struct OpenIDIdentityProvider {
 	// authorization token request.
 	ExtraScopes []String
 
-	// URLs of the provider.
-	URLS OpenIDURLs
+	// The URL that the OpenID Provider asserts as the Issuer Identifier
+	Issuer String
 }
 
 // _OpenID_ identity provider claims.
@@ -188,16 +207,4 @@ struct OpenIDClaims {
 
 	// List of claims to use as the preferred user name when provisioning a user.
 	PreferredUsername []String
-}
-
-// _OpenID_ identity provider URLs.
-struct OpenIDURLs {
-	// Authorization endpoint described in the _OpenID_ specification. Must use HTTPS.
-	Authorize String
-
-	// Token endpoint described in the _OpenID_ specification. Must use HTTPS.
-	Token String
-
-	// User information endpoint described in the _OpenID_ specification. Must use HTTPS.
-	UserInfo String
 }

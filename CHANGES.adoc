@@ -2,6 +2,342 @@
 
 This document describes the relevant changes between releases of the API model.
 
+== 0.0.105 Feb 2 2021
+
+- Add cluster hibernation support
+
+== 0.0.104 Jan 27 2021
+
+- Add addon requirement type.
+
+== 0.0.103 Jan 26 2021
+
+- Remove `cluster_admin_enabled` attribute from cluster type.
+- Add missing subscription, cluster authorization and plan attributes.
+
+== 0.0.102 Dec 17 2020
+
+- add default value to add-on parameter type
+- Add upgrade channel group for a cluster
+
+== 0.0.101 Dec 2 2020
+- Fix add-on installation delete endpoint
+
+== 0.0.100 Nov 25 2020
+
+- Remove node drain grace period from upgrade policy
+- Add node drain grace period to the cluster
+- Add etcd_encryption to sdk
+
+== 0.0.99 Nov 16 2020
+
+- Add deletion add-on installation endpoint
+- Add Update method to addon installation resource
+
+== 0.0.98 Nov 10 2020
+
+- Change Taints to struct.
+
+== 0.0.97 Nov 10 2020
+
+- Remove BYOC flag from Cluster type.
+- Add Taints field to MachinePool type.
+
+== 0.0.96 Nov 2 2020
+
+- Add Enabled to AddOnParameter type.
+
+== 0.0.95 Oct 27 2020
+
+ - Add SubnetIDs to the AWS model.
+
+== 0.0.94 Oct 26 2020
+
+- [AMS] Add IncludeRedHatAssociates to SubscriptionNotify
+
+== 0.0.93 Oct 26 2020
+
+- version: Rename field from MOA to ROSA
+
+== 0.0.92 Oct 21 2020
+
+- Add RawID field to version type.
+
+== 0.0.91 Oct 14 2020
+
+- Remove redudant fields
+- flavours: Remove infra and compute nodes
+- Add AddOnParameter modal type Update AddOn to include list of AddOnParameters
+- Add AddOnInstallationParameter modal type Update AddOnInstallation to include list of AddOnInstallationParameters
+
+== 0.0.90 Oct 11 2020
+
+- Add ComputeLabels attribute to ClusterNodes
+
+== 0.0.89 Oct 8 2020
+
+- Add machine pool locator to cluster resource
+
+== 0.0.88 Oct 5 2020
+
+- Add missing machine pools resource
+
+== 0.0.87 Oct 5 2020
+
+- Add missing machine pool resource
+
+== 0.0.86 Oct 5 2020
+
+- Added New Error Message implementation
+- idp: Add HTPasswd provider
+- Uptdating SDK with GCP credentials
+
+== 0.0.85 Oct 5 2020
+
+- Add upgrade policy state
+
+== 0.0.84 Oct 4 2020
+
+- Add machine pools link and type
+
+== 0.0.83 Sep 24 2020
+
+- add external resources to add on type model
+- SDA-2952 - Add "hidden" option to AddOn
+
+== 0.0.82 Sep 21 2020
+
+- Added Install Error Details From Provisioner
+
+== 0.0.81 Sep 14 2020
+
+- Remove redundant ID from upgrade policy class
+- Add key to label_type
+
+== 0.0.80 Sep 14 2020
+
+- Add upgrade policy type and resource
+- Add terms review and self terms review
+- Add dashboards summary
+
+== 0.0.79 Sep 7 2020
+
+- Add 'available_upgrades' list to version type
+- Add CCS type and Attribute to Cluster type
+
+== 0.0.78 Sep 4 2020
+
+- Added New DNS_READY
+- version: Add moa_enabled flag
+
+== 0.0.77 Aug 23 2020
+
+- Update to metamodel v0.0.32
+- Add the ChannelGroup attribute to the Version model
+- Add Available AWS regions command
+
+== 0.0.76 Aug 13 2020
+
+- Add link to missing provision shard
+
+== 0.0.75 Aug 6 2020
+
+- Added TokenAuthorization to root_resource
+- Added SupportCase resource
+
+== 0.0.74 Aug 5 2020
+
+- [CS] Add hive_config to the provision shard
+- [CS] Improving cluster logs endpoint
+- [AMS] Added token authorization endpoint
+
+== 0.0.73 Aug 3 2020
+
+- Add capability_review endpoint
+- Add support_cases endpoint
+
+== 0.0.72 Jul 30 2020
+
+- Fix comment
+- Expose if a region supports multi AZ
+- Add Update Identity Provider
+- removing 'deprovision' suffix from logs endpoint
+- add post method to subscription resource
+- Add labels field to external configuration type
+- Implement Batch Patch Ingresses API endpoint
+
+== 0.0.71 Jul 21 2020
+
+- Add API for getting cluster's provision shard
+- Add API for getting provision shards
+
+== 0.0.70 Jul 14 2020
+
+- Add API for custerdeployment labels
+- add organization_id to cluster_registration
+- label: Fix erroneous file extensions
+- MachineType: Expose instance size enum
+
+== 0.0.69 Jul 05 2020
+
+- Added top level sku_rules endpoint to AMS
+
+== 0.0.68 Jul 05 2020
+
+- [AMS] Changed feature toggle API to /query with payload containing organization id
+
+== 0.0.67 Jul 01 2020
+
+- [AMS] Added SkuCount to ResourceQuota type
+
+== 0.0.66 Jun 30 2020
+
+- Change feature toggle query API to receive organization ID by POST
+
+== 0.0.65 Jun 29 2020
+
+- Added Syncsets API
+- Added Uninstall Log
+- Update to metamodel v0.0.30
+
+== 0.0.64 Jun 21 2020
+
+- Added Notify to root_resource in AMS
+
+== 0.0.63 Jun 18 2020
+
+- cluster: Remove support for expiration_timestamp
+- Added top-level Notify endpoint to AMS
+
+== 0.0.62 Jun 9 2020
+
+- Add subscription notify endpoint
+
+== 0.0.61 Jun 9 2020
+
+- accounts_mgmt: Add 'fields' parameter to all list-requests
+- accounts_mgmt: Support for Labels resources
+
+== 0.0.60 Jun 3 2020
+
+- Add parameters 'offset' and 'tail' to log resource
+
+== 0.0.59 May 20 2020
+
+- FeatureToggle: Add model and resource
+
+== 0.0.58 May 15 2020
+
+- AddOns: Add link attribute
+- Update to metamodel v0.0.28
+
+== 0.0.57 May 13 2020
+
+- AddOnInstallations: Remove DELETE operation
+- Added Label to Account
+
+== 0.0.56 May 03 2020
+
+- Added Label to Organization
+
+== 0.0.55 Apr 23 2020
+
+- Add enabled field to region
+- Adding metrics.nodes to api model
+- Adding cluster ingresses endpoint
+- ClusterNodes: Add ComputeMachineType
+- Network: Added HostPrefix
+
+== 0.0.54 Apr 7 2020
+
+- Update to metamodel 0.0.27
+
+== 0.0.53 Apr 3 2020
+
+- Add pull secret deletion
+- Products: Add product attribute to cluster object
+- Products: Support for top-level cluster types
+- Add ClusterOperatorsConditions type
+- Add ClusterAlertsFiring type and field in ClusterMetrics
+
+== 0.0.52 Mar 26 2020
+
+- Removal of `in` parameters for `Get` functions
+
+== 0.0.51 Mar 25 2020
+
+- Update AMS Models
+
+== 0.0.50 Mar 24 2020
+
+- Add sockets to cluster_metrics_type
+
+== 0.0.49 Mar 24 2020
+
+- Add `Ingress` resource.
+
+== 0.0.48 Mar 22 2020
+
+- Add `API` listening method.
+
+== 0.0.47 Mar 19 2020
+
+- Add `ClusterAdminEnabled` flag.
+- Add `PullSecrets` endpoint.
+- Fix `LDAPIdentityProvider` attribute name.
+
+== 0.0.46 Mar 18 2020
+
+- Add new fields to `AddOn` and `AddOnInstallation`.
+
+== 0.0.45 Mar 11 2020
+
+- Add `Organizations` attribute to GitHub `IdP`
+
+== 0.0.44 Mar 9 2020
+
+- Remove duplicated attribute.
+
+== 0.0.43 Mar 9 2020
+
+- Improve documentation of the `LogEntry` type.
+
+== 0.0.42 Mar 5 2020
+
+- Add `client_secret` attribute to _GitHub_ identity provider.
+
+== 0.0.41 Feb 13 2020
+
+- Add `target_namespace` and `install_mode` attributes to `AddOn` type.
+- Add `state` attribute to `AWSInfrastructureAccessRole` type.
+
+== 0.0.40 Feb 5 2020
+
+- Add method to update flavour.
+
+== 0.0.39 Feb 3 2020
+
+- Add types and resources for cluster operator metrics.
+- Add `deleting` and `removed` states to AWS infrastructure access role grant
+  status.
+
+== 0.0.38 Jan 23 2020
+
+- Add `search` and `order` parameters to the method that lists registry
+  credentials.
+- Add `labels` parameter to the method that lists subscriptions.
+- Add types and resources for management of AWS infrastructure access roles.
+
+== 0.0.37 Jan 8 2020
+
+- Add new `service_logs` service.
+- Add types and resources for machine types.
+
+== 0.0.36 Jan 3 2020
+
+- Add types and resources for AWS infrastructure access roles.
+- Add GCP flavour and change AWS flavour to contain also the instance type.
+
 == 0.0.35 Jan 01 2020
 
 - Fixes for `CurrentAccess` resource.
