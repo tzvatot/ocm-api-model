@@ -4,6 +4,9 @@ This document describes the relevant changes between releases of the API model.
 ## 0.0.290 June 8 2023
 - Add `deleteAssociatedResources` locator to account resource
 
+## 0.0.292 June 21 2023
+* Add cluster autoscaler structs (#747)
+
 ## 0.0.291 June 15 2023
 * Add Reason to access review responses
 * Enable users to provide both hashed and plain-text passwords
