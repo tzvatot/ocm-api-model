@@ -4,6 +4,10 @@ This document describes the relevant changes between releases of the API model.
 ## 0.0.290 June 8 2023
 - Add `deleteAssociatedResources` locator to account resource
 
+## 0.0.293 June 21 2023
+* Add label list to OSDFM cluster request payloads
+* Replace references to labels in OSDFM cluster structs with the labels themselves
+
 ## 0.0.292 June 21 2023
 * Add cluster autoscaler structs (#747)
 
